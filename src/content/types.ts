@@ -2,13 +2,14 @@ import type { ReactNode } from 'react'
 
 export type LensId = 'intuition' | 'mechanism' | 'math' | 'code' | 'systems' | 'failure'
 
+/** The order a lesson reads in. One page, top to bottom — never tabs. */
 export const LENSES: { id: LensId; label: string; question: string }[] = [
-  { id: 'intuition', label: 'Intuition',  question: 'What is the idea?' },
-  { id: 'mechanism', label: 'Mechanism',  question: 'What happens to the numbers?' },
-  { id: 'math',      label: 'Math',       question: 'Why is the formula that shape?' },
-  { id: 'code',      label: 'Code',       question: 'How do I write it?' },
-  { id: 'systems',   label: 'Systems',    question: 'What does it cost to run?' },
-  { id: 'failure',   label: 'Failure',    question: 'How does it break?' },
+  { id: 'intuition', label: 'The idea',             question: '' },
+  { id: 'mechanism', label: 'Watch it happen',      question: '' },
+  { id: 'math',      label: 'The maths behind it',  question: '' },
+  { id: 'code',      label: 'Writing it yourself',  question: '' },
+  { id: 'systems',   label: 'What it costs to run', question: '' },
+  { id: 'failure',   label: 'When it breaks',       question: '' },
 ]
 
 export interface Paper {
@@ -27,7 +28,8 @@ export interface Concept {
   status: 'planned' | 'draft' | 'stable'
   prereqs?: string[]
   papers?: Paper[]
-  hasLab?: boolean
+  hasLab?: boolean          // has a running animation or visual
+  hero?: () => ReactNode    // the animation that opens the lesson
   lenses?: Partial<Record<LensId, () => ReactNode>>
 }
 

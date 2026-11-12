@@ -1,4 +1,5 @@
 import AttentionLab from '../../labs/AttentionLab'
+import AttentionFlow from '../../anim/AttentionFlow'
 import { Code, Eq, Note } from '../../components/ui'
 import type { Concept } from '../types'
 
@@ -10,6 +11,7 @@ export const attention: Concept = {
   difficulty: 2,
   status: 'stable',
   hasLab: true,
+  hero: () => <AttentionFlow />,
   prereqs: ['softmax-numerics'],
   papers: [
     { title: 'Attention Is All You Need', year: 2017, url: 'https://arxiv.org/abs/1706.03762',

@@ -1,3 +1,4 @@
+import DiffusionFlow from '../../anim/DiffusionFlow'
 import DiffusionLab from '../../labs/DiffusionLab'
 import { Code, Eq, Note } from '../../components/ui'
 import type { Concept } from '../types'
@@ -10,6 +11,7 @@ export const diffusionForward: Concept = {
   difficulty: 3,
   status: 'stable',
   hasLab: true,
+  hero: () => <DiffusionFlow />,
   papers: [
     { title: 'Denoising Diffusion Probabilistic Models', year: 2020, url: 'https://arxiv.org/abs/2006.11239',
       idea: 'Train a network to predict the noise instead of the image. The loss collapses to a plain mean squared error.' },
