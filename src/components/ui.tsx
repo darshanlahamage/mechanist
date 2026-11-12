@@ -234,19 +234,18 @@ export function Bars({ values, labels, height = 90, highlight }:
 export function Lab({ title, children, takeaway }:
   { title: string; children: ReactNode; takeaway?: ReactNode }) {
   return (
-    <div className="my-6 overflow-hidden rounded-xl border border-[#2b3340] bg-[#0f1319]">
-      <div className="flex items-center gap-2 border-b border-[#2b3340] bg-[#131821] px-4 py-2.5">
-        <span className="rounded bg-[var(--accent)]/15 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-[var(--accent)]">Lab</span>
-        <span className="text-[13px] font-semibold">{title}</span>
-        <span className="ml-auto text-[11px] text-[var(--dim)]">runs live in your browser</span>
-      </div>
+    <figure className="my-7 overflow-hidden rounded-xl border border-[#2b3340] bg-[#0f1319]">
+      <figcaption className="border-b border-[#20262f] px-4 py-2.5 text-[13px] font-semibold text-white">
+        {title}
+        <span className="ml-2 font-normal text-[11.5px] text-[var(--dim)]">— change anything, it recomputes</span>
+      </figcaption>
       <div className="p-4">{children}</div>
       {takeaway && (
-        <div className="border-t border-[#2b3340] bg-[#0c1015] px-4 py-3 text-[13px] text-[#c7cdd8]">
-          <span className="font-semibold text-[var(--accent)]">What to take away: </span>{takeaway}
+        <div className="border-t border-[#20262f] bg-[#0b0e13] px-4 py-3 text-[13px] leading-relaxed text-[#b4bcc8]">
+          {takeaway}
         </div>
       )}
-    </div>
+    </figure>
   )
 }
 

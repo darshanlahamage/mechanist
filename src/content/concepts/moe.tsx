@@ -1,3 +1,4 @@
+import MoEFlow from '../../anim/MoEFlow'
 import MoELab from '../../labs/MoELab'
 import { Code, Eq, Note } from '../../components/ui'
 import type { Concept } from '../types'
@@ -10,6 +11,7 @@ export const moe: Concept = {
   difficulty: 4,
   status: 'stable',
   hasLab: true,
+  hero: () => <MoEFlow />,
   prereqs: ['attention'],
   papers: [
     { title: 'Outrageously Large Neural Networks: The Sparsely-Gated MoE Layer', year: 2017,

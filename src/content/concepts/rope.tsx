@@ -1,3 +1,4 @@
+import RopeFlow from '../../anim/RopeFlow'
 import RopeLab from '../../labs/RopeLab'
 import { Code, Eq, Note } from '../../components/ui'
 import type { Concept } from '../types'
@@ -10,6 +11,7 @@ export const rope: Concept = {
   difficulty: 3,
   status: 'stable',
   hasLab: true,
+  hero: () => <RopeFlow />,
   prereqs: ['attention'],
   papers: [
     { title: 'RoFormer: Enhanced Transformer with Rotary Position Embedding', year: 2021,
