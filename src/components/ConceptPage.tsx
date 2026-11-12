@@ -45,12 +45,12 @@ export default function ConceptPage() {
       <article className="min-w-0 flex-1">
         <div className="flex items-center gap-2 text-[12px]">
           <Link to={`/track/${track?.id}`} className="text-[var(--accent)] hover:underline">{track?.title}</Link>
-          <span className="text-[#39414e]">·</span>
+          <span className="text-[#cec4ae]">·</span>
           <span className="font-mono text-[var(--dim)]">lesson {trackIdx + 1}.{lessonIdx + 1}</span>
         </div>
 
         <h1 className="mt-2 text-[33px] font-bold leading-[1.12] tracking-tight">{c.title}</h1>
-        <p className="mt-3 max-w-[62ch] text-[17px] leading-relaxed text-[#aab3c0]">{c.tagline}</p>
+        <p className="mt-3 max-w-[62ch] text-[17px] leading-relaxed text-[#6d6659]">{c.tagline}</p>
 
         {c.prereqs && c.prereqs.length > 0 && (
           <div className="mt-5 flex flex-wrap items-center gap-2 text-[12px]">
@@ -76,7 +76,7 @@ export default function ConceptPage() {
               what actually happens, the maths, the code, what it costs and how it breaks.
             </p>
             <a href="https://github.com/darshanlahamage/mechanist" target="_blank" rel="noreferrer"
-              className="mt-5 inline-block rounded-md bg-[var(--accent)] px-3.5 py-2 text-[13px] font-semibold text-[#06201c]">
+              className="mt-5 inline-block rounded-md bg-[var(--accent)] px-3.5 py-2 text-[13px] font-semibold text-[#dbece8]">
               Write it on GitHub
             </a>
           </div>
@@ -87,8 +87,8 @@ export default function ConceptPage() {
               return (
                 <section key={l.id} id={l.id} className="scroll-mt-20 pt-9">
                   <div className="mb-4 flex items-center gap-3">
-                    <span className="font-mono text-[11px] text-[#4c5563]">{String(i + 1).padStart(2, '0')}</span>
-                    <h2 className="text-[20px] font-bold tracking-tight text-white">{l.label}</h2>
+                    <span className="font-mono text-[11px] text-[#9c9382]">{String(i + 1).padStart(2, '0')}</span>
+                    <h2 className="text-[20px] font-bold tracking-tight text-[var(--text)]">{l.label}</h2>
                     <span className="h-px flex-1 bg-[var(--line)]" />
                   </div>
                   <div className="prose-m max-w-[68ch]"><Body /></div>
@@ -136,12 +136,12 @@ export default function ConceptPage() {
 
       {sections.length > 1 && (
         <aside className="sticky top-8 hidden h-fit w-[168px] shrink-0 xl:block">
-          <div className="mb-2 text-[10.5px] font-bold uppercase tracking-wider text-[#4c5563]">On this page</div>
+          <div className="mb-2 text-[10.5px] font-bold uppercase tracking-wider text-[#9c9382]">On this page</div>
           {sections.map(l => (
             <a key={l.id} href={`#${l.id}`}
               className={`block border-l py-[5px] pl-2.5 text-[12px] transition ${
                 active === l.id ? 'border-[var(--accent)] text-[var(--accent)]'
-                : 'border-[#232a34] text-[#7a8494] hover:text-white'}`}>
+                : 'border-[#dcd3c0] text-[#8a8171] hover:text-[var(--text)]'}`}>
               {l.label}
             </a>
           ))}

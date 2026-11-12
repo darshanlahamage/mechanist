@@ -150,7 +150,7 @@ loss = cross_entropy(logits, targets) + 0.01 * sum(aux_losses)`}</Code>
               ['Works at batch 1024, falls apart at batch 8', 'Not enough tokens for the experts to form useful batches. MoE needs scale.'],
               ['Fine-tuning an MoE collapses the routing', 'Narrow fine-tuning data makes one expert correct for everything. Keep the aux loss on.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}

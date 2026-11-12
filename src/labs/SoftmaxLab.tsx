@@ -68,12 +68,12 @@ export default function SoftmaxLab() {
                 <tbody>
                   {logits.map((l, i) => (
                     <tr key={i} className="border-t border-[var(--line)]">
-                      <td className="py-1 text-[#c7cdd8]">{l.toFixed(1)}</td>
-                      <td className="py-1 text-right text-[#c7cdd8]">{(l - mx).toFixed(1)}</td>
+                      <td className="py-1 text-[#3e392f]">{l.toFixed(1)}</td>
+                      <td className="py-1 text-right text-[#3e392f]">{(l - mx).toFixed(1)}</td>
                       <td className={`py-1 text-right ${Number.isFinite(exps[i]) ? 'text-[var(--accent)]' : 'text-[var(--bad)]'}`}>
                         {Number.isFinite(exps[i]) ? exps[i].toExponential(2) : 'Infinity'}
                       </td>
-                      <td className={`py-1 text-right ${Number.isFinite(probs[i]) ? 'text-[#c7cdd8]' : 'text-[var(--bad)]'}`}>
+                      <td className={`py-1 text-right ${Number.isFinite(probs[i]) ? 'text-[#3e392f]' : 'text-[var(--bad)]'}`}>
                         {Number.isFinite(probs[i]) ? probs[i].toFixed(4) : 'NaN'}
                       </td>
                     </tr>
@@ -85,7 +85,7 @@ export default function SoftmaxLab() {
 
           {!broken && <Panel title="Resulting distribution"><Bars values={probs} /></Panel>}
           {broken && (
-            <div className="rounded-lg border-l-2 border-[var(--bad)] bg-[rgba(248,113,113,0.07)] px-4 py-3 text-[13px] leading-relaxed text-[#c7cdd8]">
+            <div className="rounded-lg border-l-2 border-[var(--bad)] bg-[rgba(176,58,49,0.07)] px-4 py-3 text-[13px] leading-relaxed text-[#3e392f]">
               <b className="text-[var(--bad)]">This is the bug.</b> exp() passed the largest number
               {' '}{dtype} can hold, so it became Infinity. Dividing Infinity by Infinity gives NaN.
               One NaN here spreads through the whole network in a single step, and your loss prints

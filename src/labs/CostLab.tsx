@@ -63,8 +63,8 @@ export default function CostLab() {
                     sub={`hardware wants ${dec.ridgePoint.toFixed(0)}`} tone={dec.intensity < dec.ridgePoint ? 'warn' : 'good'} />
             </div>
             <div className="mt-3 text-[12.5px] leading-relaxed text-[var(--dim)]">
-              Memory traffic this step: <b className="text-[#c7cdd8]">{fmtBytes(dec.weightBytes)}</b> of weights
-              + <b className="text-[#c7cdd8]">{fmtBytes(dec.kvBytes)}</b> of KV cache.
+              Memory traffic this step: <b className="text-[#3e392f]">{fmtBytes(dec.weightBytes)}</b> of weights
+              + <b className="text-[#3e392f]">{fmtBytes(dec.kvBytes)}</b> of KV cache.
               The GPU can do {fmtNum(dec.ridgePoint)} operations in the time it takes to read one byte,
               and this step only does {dec.intensity.toFixed(2)}. So {' '}
               {dec.bound === 'memory'
@@ -74,7 +74,7 @@ export default function CostLab() {
           </Panel>
 
           <Panel title="Tokens per second as you add more requests">
-            <Line series={[{ name: 'throughput', color: '#5eead4', points: throughput }]}
+            <Line series={[{ name: 'throughput', color: '#0b6f66', points: throughput }]}
                   markers={[{ x: batch, label: 'you' }]}
                   xLabel="batch size" yLabel="tokens/sec" height={160} />
           </Panel>

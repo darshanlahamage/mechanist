@@ -109,7 +109,7 @@ export default function NormLab() {
                 </tr></thead>
                 <tbody>{rowStats.map((s, i) => (
                   <tr key={i} className="border-t border-[var(--line)]">
-                    <td className="py-1 text-[#c7cdd8]">{i}</td>
+                    <td className="py-1 text-[#3e392f]">{i}</td>
                     <td className="py-1 text-right text-[var(--dim)]">{s.mean.toFixed(3)}</td>
                     <td className="py-1 text-right text-[var(--accent)]">{s.std.toFixed(3)}</td>
                   </tr>))}</tbody>
@@ -124,7 +124,7 @@ export default function NormLab() {
                 </tr></thead>
                 <tbody>{colStats.slice(0, 8).map((s, j) => (
                   <tr key={j} className="border-t border-[var(--line)]">
-                    <td className={`py-1 ${j === outlierFeature ? 'text-[var(--warn)]' : 'text-[#c7cdd8]'}`}>
+                    <td className={`py-1 ${j === outlierFeature ? 'text-[var(--warn)]' : 'text-[#3e392f]'}`}>
                       {j}{j === outlierFeature && ' (outlier)'}
                     </td>
                     <td className="py-1 text-right text-[var(--dim)]">{s.mean.toFixed(3)}</td>

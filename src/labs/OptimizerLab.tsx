@@ -3,11 +3,11 @@ import { SURFACES, type OptName, type Surface, runOptimizer } from '../lib/optim
 import { Lab, Panel, Select, Slider, Stat } from '../components/ui'
 
 const OPTS: { name: OptName; color: string }[] = [
-  { name: 'SGD', color: '#f87171' },
-  { name: 'SGD + momentum', color: '#fbbf24' },
-  { name: 'RMSProp', color: '#60a5fa' },
-  { name: 'Adam', color: '#5eead4' },
-  { name: 'AdamW', color: '#a78bfa' },
+  { name: 'SGD', color: '#b03a31' },
+  { name: 'SGD + momentum', color: '#9a5c05' },
+  { name: 'RMSProp', color: '#2563a8' },
+  { name: 'Adam', color: '#0b6f66' },
+  { name: 'AdamW', color: '#6a46a3' },
 ]
 
 export default function OptimizerLab() {
@@ -48,16 +48,16 @@ export default function OptimizerLab() {
     for (let i = 0; i < W * H; i++) {
       const t = (vals[i] - lo) / (hi - lo || 1)
       const band = Math.sin(t * 34) > 0.86 ? 26 : 0      // contour lines
-      img.data[i * 4] = 14 + t * 34 + band
-      img.data[i * 4 + 1] = 17 + t * 26 + band
-      img.data[i * 4 + 2] = 22 + t * 52 + band
+      img.data[i * 4] = 250 - t * 74 - band
+      img.data[i * 4 + 1] = 246 - t * 84 - band
+      img.data[i * 4 + 2] = 236 - t * 100 - band
       img.data[i * 4 + 3] = 255
     }
     g.putImageData(img, 0, 0)
 
     // the minimum
     const [mx, my] = toPx(surface === 'rosenbrock' ? 1 : 0, surface === 'rosenbrock' ? 1 : 0)
-    g.strokeStyle = 'rgba(255,255,255,0.5)'; g.lineWidth = 1
+    g.strokeStyle = 'rgba(34,32,27,0.22)'; g.lineWidth = 1
     g.beginPath(); g.moveTo(mx - 5, my); g.lineTo(mx + 5, my)
     g.moveTo(mx, my - 5); g.lineTo(mx, my + 5); g.stroke()
 
@@ -108,7 +108,7 @@ export default function OptimizerLab() {
                 return (
                   <div key={p.name} className="flex items-center gap-2">
                     <span className="h-[2px] w-4 shrink-0" style={{ background: p.color }} />
-                    <span className="flex-1 truncate text-[12px] text-[#c7cdd8]">{p.name}</span>
+                    <span className="flex-1 truncate text-[12px] text-[#3e392f]">{p.name}</span>
                     <span className={`font-mono text-[11px] ${diverged ? 'text-[var(--bad)]' : 'text-[var(--accent)]'}`}>
                       {diverged ? 'diverged' : loss.toFixed(4)}
                     </span>
@@ -122,7 +122,7 @@ export default function OptimizerLab() {
         <Panel title="The path each optimizer takes">
           <canvas ref={ref} className="w-full max-w-[460px] rounded-md border border-[var(--line)]" />
           <div className="mt-2.5 text-[12.5px] leading-relaxed text-[var(--dim)]">
-            Brighter means higher loss. The cross is the minimum. Each line is one optimizer walking
+            Darker means higher loss. The cross is the minimum. Each line is one optimizer walking
             downhill from the same starting point with the same learning rate.
           </div>
         </Panel>

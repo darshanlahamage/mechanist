@@ -73,7 +73,7 @@ export default function ScalingLawLab() {
 
         <div className="space-y-4">
           <Panel title="Loss across every way of spending the same compute">
-            <Line series={[{ name: 'predicted loss', color: '#5eead4', points: curve }]}
+            <Line series={[{ name: 'predicted loss', color: '#0b6f66', points: curve }]}
                   markers={[{ x: Math.log10(best.N), label: 'best' }]}
                   xLabel="log10(parameters)" yLabel="loss" height={190} />
             <div className="mt-2 text-[12.5px] leading-relaxed text-[var(--dim)]">

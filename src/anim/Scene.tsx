@@ -74,38 +74,38 @@ export function Scene({ steps, children, height, autoPlay = false, loop = true, 
   }
 
   return (
-    <figure className="my-7 overflow-hidden rounded-xl border border-[#2b3340] bg-[#0f1319]">
+    <figure className="my-7 overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--panel)]">
       <div className="relative" style={{ minHeight: height }}>
         {children({ step, t, global: total ? elapsed / total : 0 })}
       </div>
 
       {caption && (
-        <div className="border-t border-[#20262f] px-4 py-3">
+        <div className="border-t border-[#e3dbc9] px-4 py-3">
           <div className="flex items-baseline gap-2">
             <span className="shrink-0 font-mono text-[11px] text-[var(--accent)]">
               {step + 1}/{steps.length}
             </span>
-            <span className="text-[13.5px] font-medium text-white">{steps[step]?.label}</span>
+            <span className="text-[13.5px] font-medium text-[var(--text)]">{steps[step]?.label}</span>
           </div>
-          <p className="mt-1 text-[13px] leading-relaxed text-[#b4bcc8]">{steps[step]?.say}</p>
+          <p className="mt-1 text-[13px] leading-relaxed text-[#555045]">{steps[step]?.say}</p>
         </div>
       )}
 
-      <div className="flex items-center gap-2 border-t border-[#20262f] bg-[#0b0e13] px-3 py-2">
+      <div className="flex items-center gap-2 border-t border-[var(--line)] bg-[var(--panel-2)] px-3 py-2">
         <button onClick={() => goto(step - 1)} title="previous step"
-          className="grid h-7 w-7 place-items-center rounded text-[var(--dim)] hover:bg-white/5 hover:text-white">◀</button>
+          className="grid h-7 w-7 place-items-center rounded text-[var(--dim)] hover:bg-black/[0.05] hover:text-[var(--text)]">◀</button>
         <button onClick={() => { if (elapsed >= total) setElapsed(0); setPlaying(p => !p) }}
-          className="grid h-7 w-7 place-items-center rounded bg-[var(--accent)] text-[#06201c]">
+          className="grid h-7 w-7 place-items-center rounded bg-[var(--accent)] text-[#dbece8]">
           {playing ? '❚❚' : '▶'}
         </button>
         <button onClick={() => goto(step + 1)} title="next step"
-          className="grid h-7 w-7 place-items-center rounded text-[var(--dim)] hover:bg-white/5 hover:text-white">▶</button>
+          className="grid h-7 w-7 place-items-center rounded text-[var(--dim)] hover:bg-black/[0.05] hover:text-[var(--text)]">▶</button>
 
         <div className="mx-1 flex flex-1 gap-[3px]">
           {steps.map((s, i) => (
             <button key={i} onClick={() => goto(i)} title={s.label}
               className="group relative h-6 flex-1 rounded-sm">
-              <span className="absolute inset-x-0 top-1/2 h-[5px] -translate-y-1/2 overflow-hidden rounded-full bg-[#232a34]">
+              <span className="absolute inset-x-0 top-1/2 h-[5px] -translate-y-1/2 overflow-hidden rounded-full bg-[#dcd3c0]">
                 <span className="block h-full rounded-full bg-[var(--accent)] transition-[width] duration-75"
                   style={{ width: i < step ? '100%' : i === step ? `${t * 100}%` : '0%' }} />
               </span>
@@ -114,11 +114,11 @@ export function Scene({ steps, children, height, autoPlay = false, loop = true, 
         </div>
 
         <button onClick={() => setSpeed(s => (s === 1 ? 0.35 : s === 0.35 ? 2 : 1))}
-          className="rounded px-1.5 py-0.5 font-mono text-[11px] text-[var(--dim)] hover:bg-white/5 hover:text-white">
+          className="rounded px-1.5 py-0.5 font-mono text-[11px] text-[var(--dim)] hover:bg-black/[0.05] hover:text-[var(--text)]">
           {speed}×
         </button>
         <button onClick={() => { setElapsed(0); setPlaying(false) }}
-          className="rounded px-1.5 py-0.5 text-[11px] text-[var(--dim)] hover:bg-white/5 hover:text-white">reset</button>
+          className="rounded px-1.5 py-0.5 text-[11px] text-[var(--dim)] hover:bg-black/[0.05] hover:text-[var(--text)]">reset</button>
       </div>
     </figure>
   )

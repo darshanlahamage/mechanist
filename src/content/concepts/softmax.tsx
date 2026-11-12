@@ -114,7 +114,7 @@ loss = -log_softmax(logits)[target]`}</Code>
               ['bfloat16', '≈ 3.4e38', 'same range as fp32, far less precision']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)]">
                 <td className="py-1.5 text-[var(--accent)]">{r[0]}</td>
-                <td className="py-1.5 text-[#c7cdd8]">{r[1]}</td>
+                <td className="py-1.5 text-[#3e392f]">{r[1]}</td>
                 <td className="py-1.5 text-[var(--dim)]">{r[2]}</td>
               </tr>
             ))}

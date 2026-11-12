@@ -143,7 +143,7 @@ class GroupedQueryAttention(nn.Module):
               ['MLA implementation gives wrong results with RoPE', 'Rotation must be applied to the un-compressed part only. This is the standard MLA trap.'],
               ['Cache quantisation to int8 hurt long context badly', 'Error accumulates over sequence length. Keep the most recent tokens at full precision.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}

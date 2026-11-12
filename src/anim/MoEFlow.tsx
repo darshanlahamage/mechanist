@@ -53,20 +53,20 @@ export default function MoEFlow() {
         {/* tokens */}
         {Array.from({ length: N_TOK }, (_, i) => (
           <rect key={i} x={tokX(i) - 11} y={tokY(i) - 8} width={22} height={16} rx={3}
-            fill="#1a1f27" stroke="#2b3340"
+            fill="#fffdf7" stroke="#dcd3c0"
             opacity={step === 0 ? 0.25 + 0.75 * stagger(e, i, N_TOK, 0.93) : 1} />
         ))}
-        <text x={W / 2} y={18} textAnchor="middle" fontSize="11" fill="#6b7483">24 tokens</text>
+        <text x={W / 2} y={18} textAnchor="middle" fontSize="11" fill="#8a8171">24 tokens</text>
 
         {/* router */}
         {step >= 1 && (
           <g opacity={step === 1 ? appear(e, 0, 0.25) : 1}>
             <rect x={W / 2 - 90} y={110} width={180} height={30} rx={6}
-              fill="rgba(167,139,250,0.12)" stroke="#a78bfa" />
-            <text x={W / 2} y={130} textAnchor="middle" fontSize="12" fill="#a78bfa">router — one small matrix</text>
+              fill="rgba(106,70,163,0.12)" stroke="#6a46a3" />
+            <text x={W / 2} y={130} textAnchor="middle" fontSize="12" fill="#6a46a3">router — one small matrix</text>
             {Array.from({ length: N_TOK }, (_, i) => (
               <line key={i} x1={tokX(i)} y1={tokY(i) + 9} x2={W / 2} y2={110}
-                stroke="#39414e" strokeWidth="0.6" opacity={0.5 * appear(e, 0, 0.3)} />
+                stroke="#cec4ae" strokeWidth="0.6" opacity={0.5 * appear(e, 0, 0.3)} />
             ))}
           </g>
         )}
@@ -79,19 +79,19 @@ export default function MoEFlow() {
           return (
             <g key={ex}>
               <rect x={expX(ex) - 38} y={expY - 18} width={76} height={36} rx={6}
-                fill={dead ? '#15181d' : `rgba(94,234,212,${0.06 + busy * 0.2})`}
-                stroke={over ? '#f87171' : dead ? '#2b3340' : '#5eead4'}
+                fill={dead ? '#f0eadc' : `rgba(11,111,102,${0.06 + busy * 0.2})`}
+                stroke={over ? '#b03a31' : dead ? '#dcd3c0' : '#0b6f66'}
                 strokeOpacity={dead ? 1 : 0.75} />
               <text x={expX(ex)} y={expY + 5} textAnchor="middle" fontSize="11"
-                fill={dead ? '#454d5a' : '#c7cdd8'}>E{ex}</text>
+                fill={dead ? '#a79e8c' : '#3e392f'}>E{ex}</text>
               {step >= 3 && (
                 <>
-                  <rect x={expX(ex) - 38} y={expY + 28} width={76} height={7} rx={3} fill="#1a1f27" />
+                  <rect x={expX(ex) - 38} y={expY + 28} width={76} height={7} rx={3} fill="#fffdf7" />
                   <rect x={expX(ex) - 38} y={expY + 28} rx={3} height={7}
                     width={76 * Math.min(1, load[ex] / (cap * 1.3)) * (step === 3 || step === 5 ? e : 1)}
-                    fill={over ? '#f87171' : '#5eead4'} />
+                    fill={over ? '#b03a31' : '#0b6f66'} />
                   <text x={expX(ex)} y={expY + 50} textAnchor="middle" fontSize="10"
-                    fontFamily="ui-monospace" fill={over ? '#f87171' : dead ? '#454d5a' : '#8b94a1'}>
+                    fontFamily="ui-monospace" fill={over ? '#b03a31' : dead ? '#a79e8c' : '#7b7364'}>
                     {load[ex]}{over ? ` (${load[ex] - cap} dropped)` : ''}
                   </text>
                 </>
@@ -116,9 +116,9 @@ export default function MoEFlow() {
             const py = sy + (dy - sy) * arrive
             return (
               <g key={`${i}-${k}`}>
-                <line x1={sx} y1={sy} x2={px} y2={py} stroke="#5eead4"
+                <line x1={sx} y1={sy} x2={px} y2={py} stroke="#0b6f66"
                   strokeWidth="0.7" strokeOpacity={0.14} />
-                <circle cx={px} cy={py} r="3" fill="#5eead4" opacity={0.55 + 0.45 * arrive} />
+                <circle cx={px} cy={py} r="3" fill="#0b6f66" opacity={0.55 + 0.45 * arrive} />
               </g>
             )
           })
@@ -126,7 +126,7 @@ export default function MoEFlow() {
 
         {step >= 3 && (
           <text x={W / 2} y={H - 6} textAnchor="middle" fontSize="10.5"
-            fill={step >= 5 ? '#f87171' : '#6b7483'}>
+            fill={step >= 5 ? '#b03a31' : '#8a8171'}>
             {step >= 5
               ? 'capacity exceeded on the busy experts — those tokens skip the layer entirely'
               : `capacity per expert: ${cap} tokens`}

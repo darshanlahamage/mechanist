@@ -136,7 +136,7 @@ print(run_cost(1e23))     # hours, dollars`}</Code>
               ['Small model beat the predicted curve', 'Data quality or distillation. These laws assume ordinary web text.'],
               ['Kaplan and Chinchilla disagree', 'Chinchilla matched the schedule to each run length. That one methodological fix changed the conclusion.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}

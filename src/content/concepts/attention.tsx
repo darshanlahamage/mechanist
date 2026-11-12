@@ -88,7 +88,7 @@ export const attention: Concept = {
               ['output', 'n × d_head', 'same shape as V']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)]">
                 <td className="py-1.5 text-[var(--accent)]">{r[0]}</td>
-                <td className="py-1.5 text-[#c7cdd8]">{r[1]}</td>
+                <td className="py-1.5 text-[#3e392f]">{r[1]}</td>
                 <td className="py-1.5 text-[var(--dim)]">{r[2]}</td>
               </tr>
             ))}
@@ -217,7 +217,7 @@ class MultiHeadAttention(nn.Module):
               ['Fine up to 4k tokens, garbage after', 'Not attention — that is the position encoding running past what it was trained on.'],
               ['Out of memory only on long batches', 'Naive attention materialising n² scores. Switch to a fused kernel.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}

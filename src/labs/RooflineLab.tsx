@@ -73,36 +73,36 @@ export default function RooflineLab() {
             <svg viewBox={`0 0 ${W} ${H}`} className="w-full">
               {[1e9, 1e10, 1e11, 1e12, 1e13, 1e14, 1e15].filter(v => v > yMin && v < yMax).map(v => (
                 <g key={v}>
-                  <line x1={L} x2={W - R} y1={ly(v)} y2={ly(v)} stroke="#1f252e" />
-                  <text x={L - 6} y={ly(v) + 3} textAnchor="end" fontSize="9" fill="#6b7483" fontFamily="ui-monospace">{fmtF(v)}</text>
+                  <line x1={L} x2={W - R} y1={ly(v)} y2={ly(v)} stroke="#ebe4d5" />
+                  <text x={L - 6} y={ly(v) + 3} textAnchor="end" fontSize="9" fill="#8a8171" fontFamily="ui-monospace">{fmtF(v)}</text>
                 </g>
               ))}
               {[0.1, 1, 10, 100, 1000].map(v => (
                 <g key={v}>
-                  <line x1={lx(v)} x2={lx(v)} y1={T} y2={H - B} stroke="#1f252e" />
-                  <text x={lx(v)} y={H - 20} textAnchor="middle" fontSize="9" fill="#6b7483" fontFamily="ui-monospace">{v}</text>
+                  <line x1={lx(v)} x2={lx(v)} y1={T} y2={H - B} stroke="#ebe4d5" />
+                  <text x={lx(v)} y={H - 20} textAnchor="middle" fontSize="9" fill="#8a8171" fontFamily="ui-monospace">{v}</text>
                 </g>
               ))}
               {/* the roof itself */}
-              <polyline fill="none" stroke="#5eead4" strokeWidth="2"
+              <polyline fill="none" stroke="#0b6f66" strokeWidth="2"
                 points={`${lx(xMin)},${ly(Math.max(attain(xMin), yMin))} ${lx(ridge)},${ly(peak)} ${lx(xMax)},${ly(peak)}`} />
-              <line x1={lx(ridge)} x2={lx(ridge)} y1={T} y2={H - B} stroke="#5eead4" strokeWidth="1" strokeDasharray="3 3" opacity="0.5" />
-              <text x={lx(ridge) + 4} y={T + 10} fontSize="9" fill="#5eead4">ridge {ridge.toFixed(0)}</text>
-              <text x={lx(0.12)} y={ly(attain(0.12)) - 8} fontSize="9" fill="#6b7483">memory bound</text>
-              <text x={W - R - 90} y={ly(peak) - 8} fontSize="9" fill="#6b7483">compute bound</text>
+              <line x1={lx(ridge)} x2={lx(ridge)} y1={T} y2={H - B} stroke="#0b6f66" strokeWidth="1" strokeDasharray="3 3" opacity="0.5" />
+              <text x={lx(ridge) + 4} y={T + 10} fontSize="9" fill="#0b6f66">ridge {ridge.toFixed(0)}</text>
+              <text x={lx(0.12)} y={ly(attain(0.12)) - 8} fontSize="9" fill="#8a8171">memory bound</text>
+              <text x={W - R - 90} y={ly(peak) - 8} fontSize="9" fill="#8a8171">compute bound</text>
 
               {ops.map(o => {
                 const x = lx(Math.max(o.intensity, xMin)), y = ly(Math.max(attain(o.intensity), yMin))
                 const mem = o.intensity < ridge
                 return (
                   <g key={o.name}>
-                    <circle cx={x} cy={y} r="4" fill={mem ? '#fbbf24' : '#a78bfa'} />
-                    <text x={x + 7} y={y + 3} fontSize="9" fill="#c7cdd8">{o.name}</text>
+                    <circle cx={x} cy={y} r="4" fill={mem ? '#9a5c05' : '#6a46a3'} />
+                    <text x={x + 7} y={y + 3} fontSize="9" fill="#3e392f">{o.name}</text>
                   </g>
                 )
               })}
-              <text x={W - R} y={H - 4} textAnchor="end" fontSize="9" fill="#6b7483">arithmetic intensity (FLOPs per byte)</text>
-              <text x={4} y={12} fontSize="9" fill="#6b7483">FLOP/s reachable</text>
+              <text x={W - R} y={H - 4} textAnchor="end" fontSize="9" fill="#8a8171">arithmetic intensity (FLOPs per byte)</text>
+              <text x={4} y={12} fontSize="9" fill="#8a8171">FLOP/s reachable</text>
             </svg>
           </Panel>
 
@@ -118,7 +118,7 @@ export default function RooflineLab() {
               <tbody>
                 {ops.map(o => (
                   <tr key={o.name} className="border-t border-[var(--line)]">
-                    <td className="py-1 text-[#c7cdd8]">{o.name}</td>
+                    <td className="py-1 text-[#3e392f]">{o.name}</td>
                     <td className="py-1 text-right text-[var(--dim)]">{fmtF(o.flops)}</td>
                     <td className="py-1 text-right text-[var(--dim)]">{(o.bytes / 1e6).toFixed(1)}M</td>
                     <td className="py-1 text-right text-[var(--accent)]">{o.intensity.toFixed(1)}</td>

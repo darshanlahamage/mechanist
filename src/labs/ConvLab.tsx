@@ -54,7 +54,7 @@ function Grid({ data, cell, highlight, onHover, label }: {
         g.fillRect(x * cell, y * cell, cell, cell)
       }
     if (highlight) {
-      g.strokeStyle = '#5eead4'; g.lineWidth = 1.5
+      g.strokeStyle = '#0b6f66'; g.lineWidth = 1.5
       g.strokeRect(highlight.x * cell, highlight.y * cell, highlight.k * cell, highlight.k * cell)
     }
   }, [data, cell, rows, cols, highlight])
@@ -177,7 +177,7 @@ export default function ConvLab() {
                 <table className="font-mono text-[11px]">
                   <tbody>{window.vals.map((r, i) => (
                     <tr key={i}>{r.map((v, j) => (
-                      <td key={j} className="w-[48px] border border-[var(--line)] py-1 text-center text-[#c7cdd8]">{v.toFixed(2)}</td>
+                      <td key={j} className="w-[48px] border border-[var(--line)] py-1 text-center text-[#3e392f]">{v.toFixed(2)}</td>
                     ))}</tr>))}</tbody>
                 </table>
                 <span className="text-[var(--dim)]">×</span>

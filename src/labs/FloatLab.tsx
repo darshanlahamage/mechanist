@@ -87,21 +87,21 @@ export default function FloatLab() {
             <div className="flex flex-wrap gap-[3px]">
               {enc.bits.split('').map((b, i) => {
                 const kind = i === 0 ? 'sign' : i <= exp ? 'exp' : 'man'
-                const col = kind === 'sign' ? '#f87171' : kind === 'exp' ? '#fbbf24' : '#5eead4'
+                const col = kind === 'sign' ? '#b03a31' : kind === 'exp' ? '#9a5c05' : '#0b6f66'
                 return (
                   <div key={i} className="grid h-7 w-6 place-items-center rounded font-mono text-[12px] font-bold"
-                       style={{ background: b === '1' ? col : '#1a1f27',
-                                color: b === '1' ? '#0b0d10' : '#4c5563' }}>{b}</div>
+                       style={{ background: b === '1' ? col : '#fffdf7',
+                                color: b === '1' ? '#fffdf7' : '#9c9382' }}>{b}</div>
                 )
               })}
             </div>
             <div className="mt-2.5 flex gap-4 text-[11.5px]">
-              <span className="text-[#f87171]">1 sign</span>
-              <span className="text-[#fbbf24]">{exp} exponent — range</span>
+              <span className="text-[#b03a31]">1 sign</span>
+              <span className="text-[#9a5c05]">{exp} exponent — range</span>
               <span className="text-[var(--accent)]">{man} mantissa — precision</span>
             </div>
             {enc.overflow && (
-              <div className="mt-3 rounded-lg border-l-2 border-[var(--bad)] bg-[rgba(248,113,113,0.07)] px-3 py-2 text-[12.5px] text-[#c7cdd8]">
+              <div className="mt-3 rounded-lg border-l-2 border-[var(--bad)] bg-[rgba(176,58,49,0.07)] px-3 py-2 text-[12.5px] text-[#3e392f]">
                 Out of range for {fmt}. The exponent field saturated, so the value became Infinity.
                 Every later calculation with it is garbage.
               </div>
@@ -118,8 +118,8 @@ export default function FloatLab() {
               </tr></thead>
               <tbody>
                 {compare.map(c => (
-                  <tr key={c.f} className={`border-t border-[var(--line)] ${c.f === fmt ? 'bg-white/[0.03]' : ''}`}>
-                    <td className="py-1.5 text-[#c7cdd8]">{c.f}</td>
+                  <tr key={c.f} className={`border-t border-[var(--line)] ${c.f === fmt ? 'bg-black/[0.03]' : ''}`}>
+                    <td className="py-1.5 text-[#3e392f]">{c.f}</td>
                     <td className={`py-1.5 text-right ${c.overflow ? 'text-[var(--bad)]' : 'text-[var(--accent)]'}`}>
                       {c.overflow ? 'Infinity' : c.value.toExponential(3)}
                     </td>

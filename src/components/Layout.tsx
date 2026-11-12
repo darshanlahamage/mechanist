@@ -12,7 +12,7 @@ export default function Layout({ children }: { children: ReactNode }) {
         <Sidebar onNavigate={() => setOpen(false)} />
       </aside>
 
-      {open && <div className="fixed inset-0 z-30 bg-black/55 lg:hidden" onClick={() => setOpen(false)} />}
+      {open && <div className="fixed inset-0 z-30 bg-[#22201b]/40 lg:hidden" onClick={() => setOpen(false)} />}
 
       <div className="min-w-0 flex-1 lg:ml-[278px]">
         <header className="sticky top-0 z-20 flex items-center gap-3 border-b border-[var(--line)] bg-[var(--bg)]/92 px-4 py-2.5 backdrop-blur lg:hidden">

@@ -139,7 +139,7 @@ opt = bnb.optim.AdamW8bit(model.parameters())    # optimizer state: 8 bytes -> 2
               ['FSDP uses more memory than expected', 'Weights are gathered per layer. Peak includes one full layer un-sharded.'],
               ['Loss stops improving after switching to pure bf16', 'The fp32 master copy was removed. Small updates are rounding to zero.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}

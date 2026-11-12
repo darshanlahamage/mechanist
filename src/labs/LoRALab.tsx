@@ -81,7 +81,7 @@ export default function LoRALab() {
 
           <div className="grid gap-3 lg:grid-cols-2">
             <Panel title="Singular values">
-              <Line series={[{ name: 'σ', color: '#5eead4', points: spectrum }]}
+              <Line series={[{ name: 'σ', color: '#0b6f66', points: spectrum }]}
                     markers={[{ x: rank - 1, label: 'r' }]} xLabel="component" height={140} />
               <div className="mt-2 text-[12px] leading-relaxed text-[var(--dim)]">
                 A steep drop means the change really is low rank, and a small r is enough.
@@ -89,7 +89,7 @@ export default function LoRALab() {
               </div>
             </Panel>
             <Panel title="Change captured by rank">
-              <Line series={[{ name: 'captured', color: '#a78bfa', points: energy }]}
+              <Line series={[{ name: 'captured', color: '#6a46a3', points: energy }]}
                     markers={[{ x: rank, label: 'you' }]} xLabel="rank" height={140}
                     yFmt={v => `${(v * 100).toFixed(0)}%`} />
               <div className="mt-2 text-[12px] leading-relaxed text-[var(--dim)]">
