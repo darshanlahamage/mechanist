@@ -16,10 +16,10 @@ export default function TrackPage() {
                 className="block rounded-lg border border-[var(--line)] bg-[var(--panel)] p-3.5 transition hover:border-[var(--accent)]">
             <div className="flex items-center gap-2">
               <span className={`h-1.5 w-1.5 shrink-0 rounded-full ${
-                c.status === 'stable' ? 'bg-[var(--accent)]' : c.status === 'draft' ? 'bg-[var(--warn)]' : 'bg-[#39414e]'}`} />
-              <span className={`text-[14px] font-semibold ${c.status === 'planned' ? 'text-[#8b94a1]' : ''}`}>{c.title}</span>
+                c.status === 'stable' ? 'bg-[var(--accent)]' : c.status === 'draft' ? 'bg-[var(--warn)]' : 'bg-[#cec4ae]'}`} />
+              <span className={`text-[14px] font-semibold ${c.status === 'planned' ? 'text-[#7b7364]' : ''}`}>{c.title}</span>
               {c.hasLab && <span className="rounded bg-[var(--accent-2)]/15 px-1.5 py-0.5 text-[9px] font-bold tracking-wider text-[var(--accent-2)]">LAB</span>}
-              <span className="ml-auto shrink-0 font-mono text-[10px] text-[#5b6472]">
+              <span className="ml-auto shrink-0 font-mono text-[10px] text-[#8f8775]">
                 {c.status === 'planned' ? 'not written' : 'difficulty ' + c.difficulty}
               </span>
             </div>

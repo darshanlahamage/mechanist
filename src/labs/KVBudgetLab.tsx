@@ -59,13 +59,13 @@ export default function KVBudgetLab() {
               {all.map(s => (
                 <div key={s.name}>
                   <div className="flex items-baseline justify-between gap-2">
-                    <span className="text-[13px] font-medium text-[#c7cdd8]">{s.name}</span>
+                    <span className="text-[13px] font-medium text-[#3e392f]">{s.name}</span>
                     <span className="font-mono text-[12px] text-[var(--accent)]">
                       {fmtBytes(s.bytes)}
                       {s.bytes < mha && <span className="ml-2 text-[var(--dim)]">{(mha / s.bytes).toFixed(1)}× smaller</span>}
                     </span>
                   </div>
-                  <div className="mt-1 h-[10px] overflow-hidden rounded-sm bg-[#1a1f27]">
+                  <div className="mt-1 h-[10px] overflow-hidden rounded-sm bg-[var(--panel-2)]">
                     <div className="h-full rounded-sm" style={{ width: `${(s.bytes / max) * 100}%`,
                       background: s.bytes > gpuMem ? 'var(--bad)' : 'var(--accent)' }} />
                   </div>

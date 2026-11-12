@@ -66,8 +66,8 @@ export const floatFormats: Concept = {
               ['fp8 e5m2', '1/5/2', '57344', '<1 digit']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)]">
                 <td className="py-1.5 text-[var(--accent)]">{r[0]}</td>
-                <td className="py-1.5 text-right text-[#c7cdd8]">{r[1]}</td>
-                <td className="py-1.5 text-right text-[#c7cdd8]">{r[2]}</td>
+                <td className="py-1.5 text-right text-[#3e392f]">{r[1]}</td>
+                <td className="py-1.5 text-right text-[#3e392f]">{r[2]}</td>
                 <td className="py-1.5 text-right text-[var(--dim)]">{r[3]}</td>
               </tr>
             ))}
@@ -134,7 +134,7 @@ print(big.to(torch.float16).item())     # inf      -- overflowed`}</Code>
               ['Validation loss does not match training loss exactly', 'Different batch shapes produce different accumulation paths. Small differences here are normal.'],
               ['fp8 run diverged after thousands of steps', 'Scaling factors drifted out of range. Check the amax history, not the model.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}

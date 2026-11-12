@@ -164,7 +164,7 @@ def ddim_sample(model, shape, steps=50, eta=0.0):
               ['Last third of training does nothing', 'Linear schedule. Those steps are already pure noise. Switch to cosine.'],
               ['Fine detail missing in every sample', 'VAE reconstruction limit, not the diffusion model. Check the VAE alone first.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}

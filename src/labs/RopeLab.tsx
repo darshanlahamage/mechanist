@@ -89,8 +89,8 @@ export default function RopeLab() {
           <Panel title="Dot product between two identical vectors, as they move apart">
             <Line
               series={[
-                { name: `with ${scaling}`, color: '#5eead4', points: curve },
-                ...(scaling !== 'none' ? [{ name: 'no scaling', color: '#6b7483', points: baseline, dashed: true }] : []),
+                { name: `with ${scaling}`, color: '#0b6f66', points: curve },
+                ...(scaling !== 'none' ? [{ name: 'no scaling', color: '#8a8171', points: baseline, dashed: true }] : []),
               ]}
               markers={[{ x: trainLen, label: 'trained to here' }]}
               xLabel="distance between tokens" yLabel="similarity" />
@@ -101,13 +101,13 @@ export default function RopeLab() {
           </Panel>
 
           <Panel title={`Rotation at position ${inspectPos} — one dot per dimension pair`}>
-            <Line series={[{ name: 'full turns', color: '#a78bfa',
+            <Line series={[{ name: 'full turns', color: '#6a46a3',
                              points: angles.map((a, i) => [i, a] as [number, number]) }]}
                   xLabel="dimension pair (fast → slow)" yLabel="full turns" height={140} />
             <div className="mt-2 grid grid-cols-2 gap-2 text-[12px] text-[var(--dim)] sm:grid-cols-4">
               {[0, Math.floor(d / 8), Math.floor(d / 4), Math.floor(d / 2) - 1].map(i => (
                 <div key={i} className="rounded border border-[var(--line)] px-2 py-1.5">
-                  <div className="font-mono text-[11px] text-[#c7cdd8]">pair {i}</div>
+                  <div className="font-mono text-[11px] text-[#3e392f]">pair {i}</div>
                   <div className="font-mono text-[11px] text-[var(--accent)]">
                     wavelength {wavelengths[i] > 9999 ? wavelengths[i].toExponential(1) : Math.round(wavelengths[i])}
                   </div>

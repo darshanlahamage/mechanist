@@ -159,7 +159,7 @@ def extend(base, d_head, factor, method):
               ['Fine in fp32, degraded in fp16 at long context', 'cos/sin table precision. Build the table in fp32 and cast after.'],
               ['Model ignores long range structure', 'Base too small for the target length. Raise it during long-context training.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}

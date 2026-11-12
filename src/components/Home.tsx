@@ -12,20 +12,20 @@ export default function Home() {
       <h1 className="text-[36px] font-bold leading-[1.1] tracking-tight">
         Watch what actually<br />happens inside the model.
       </h1>
-      <p className="mt-5 max-w-[60ch] text-[16.5px] leading-relaxed text-[#aab3c0]">
+      <p className="mt-5 max-w-[60ch] text-[16.5px] leading-relaxed text-[#6d6659]">
         Most material tells you what a thing is called. Here you press play and watch the numbers
         move — a query meeting every key, a vector rotating with its position, an image emerging
         from noise, tokens being routed to experts. Every frame is computed from the real maths as
         it runs. Nothing is drawn by hand.
       </p>
-      <p className="mt-3 max-w-[60ch] text-[16.5px] leading-relaxed text-[#aab3c0]">
+      <p className="mt-3 max-w-[60ch] text-[16.5px] leading-relaxed text-[#6d6659]">
         Each lesson then reads straight through: the idea, the animation, the maths, the code, what
         it costs to run, and how it breaks. One page, no tabs, in order.
       </p>
 
       <div className="mt-7 flex flex-wrap gap-3">
         <Link to="/c/attention"
-          className="rounded-md bg-[var(--accent)] px-4 py-2.5 text-[14px] font-semibold text-[#06201c]">
+          className="rounded-md bg-[var(--accent)] px-4 py-2.5 text-[14px] font-semibold text-[#dbece8]">
           Start at attention →
         </Link>
         <a href="https://github.com/darshanlahamage/mechanist" target="_blank" rel="noreferrer"
@@ -40,7 +40,7 @@ export default function Home() {
       <div className="mt-3 grid gap-3 sm:grid-cols-2">
         {animated.map(c => (
           <Link key={c.id} to={`/c/${c.id}`}
-            className="group rounded-xl border border-[#2b3340] bg-[var(--panel)] p-4 transition hover:border-[var(--accent)]">
+            className="group rounded-xl border border-[#dcd3c0] bg-[var(--panel)] p-4 transition hover:border-[var(--accent)]">
             <div className="flex items-center gap-2">
               <span className="grid h-5 w-5 place-items-center rounded-full bg-[var(--accent)]/15 text-[9px] text-[var(--accent)]">▶</span>
               <span className="text-[14.5px] font-semibold group-hover:text-[var(--accent)]">{c.title}</span>
@@ -56,7 +56,7 @@ export default function Home() {
       <div className="mt-3 flex flex-wrap gap-2">
         {rest.map(c => (
           <Link key={c.id} to={`/c/${c.id}`}
-            className="rounded-full border border-[var(--line)] px-3 py-1.5 text-[12.5px] text-[#b6bec9] transition hover:border-[var(--accent)] hover:text-[var(--accent)]">
+            className="rounded-full border border-[var(--line)] px-3 py-1.5 text-[12.5px] text-[#555045] transition hover:border-[var(--accent)] hover:text-[var(--accent)]">
             {c.title}
           </Link>
         ))}
@@ -76,9 +76,9 @@ export default function Home() {
           return (
             <Link key={t.id} to={`/track/${t.id}`}
               className="flex items-center gap-3 rounded-lg border border-[var(--line)] bg-[var(--panel)] px-4 py-3 transition hover:border-[var(--accent)]">
-              <span className="font-mono text-[11px] text-[#4c5563]">{String(i + 1).padStart(2, '0')}</span>
+              <span className="font-mono text-[11px] text-[#9c9382]">{String(i + 1).padStart(2, '0')}</span>
               <span className="flex-1 text-[13.5px] font-medium">{t.title}</span>
-              <span className="h-1 w-20 overflow-hidden rounded-full bg-[#1f252e]">
+              <span className="h-1 w-20 overflow-hidden rounded-full bg-[#ebe4d5]">
                 <span className="block h-full rounded-full bg-[var(--accent)]"
                   style={{ width: `${(done / t.concepts.length) * 100}%` }} />
               </span>

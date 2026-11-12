@@ -1,16 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --bg: #0b0d10;
-  --panel: #12151a;
-  --panel-2: #171b22;
-  --line: #242a33;
-  --text: #e6e9ef;
-  --dim: #9aa4b2;
-  --accent: #5eead4;
-  --accent-2: #a78bfa;
-  --warn: #fbbf24;
-  --bad: #f87171;
+  --bg: #f4f0e6;        /* warm paper */
+  --panel: #fffdf7;     /* card sitting on the paper */
+  --panel-2: #ebe4d5;   /* recessed strip */
+  --line: #dcd3c0;
+  --text: #22201b;      /* ink */
+  --dim: #6d6659;
+  --accent: #0b6f66;    /* deep teal */
+  --accent-2: #6a46a3;  /* plum */
+  --warn: #9a5c05;      /* burnt amber */
+  --bad: #b03a31;       /* oxblood */
 }
 
 html, body, #root { height: 100%; }
@@ -20,22 +20,22 @@ body {
   font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
   -webkit-font-smoothing: antialiased;
 }
-* { scrollbar-width: thin; scrollbar-color: #2a313b transparent; }
+* { scrollbar-width: thin; scrollbar-color: #c9bfa9 transparent; }
 
-.prose-m p { color: #c7cdd8; line-height: 1.75; margin: 0.9rem 0; }
+.prose-m p { color: #3e392f; line-height: 1.75; margin: 0.9rem 0; }
 .prose-m h3 { font-size: 1.05rem; font-weight: 650; margin: 1.6rem 0 0.5rem; color: var(--text); }
 .prose-m ul { margin: 0.8rem 0; padding-left: 1.1rem; }
-.prose-m li { color: #c7cdd8; line-height: 1.7; margin: 0.35rem 0; list-style: disc; }
-.prose-m strong { color: #fff; font-weight: 600; }
-.prose-m code { background: #1c2129; border: 1px solid var(--line); padding: 0.1rem 0.35rem;
-  border-radius: 4px; font-size: 0.85em; color: var(--accent); font-family: ui-monospace, monospace; }
+.prose-m li { color: #3e392f; line-height: 1.7; margin: 0.35rem 0; list-style: disc; }
+.prose-m strong { color: #141310; font-weight: 600; }
+.prose-m code { background: #efe8d8; border: 1px solid var(--line); padding: 0.1rem 0.35rem;
+  border-radius: 4px; font-size: 0.85em; color: #0a5f57; font-family: ui-monospace, monospace; }
 .prose-m a { color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 
 .katex { font-size: 1.02em; }
 .katex-display { margin: 1.1rem 0; overflow-x: auto; overflow-y: hidden; padding: 0.2rem 0; }
 
-input[type="range"] { -webkit-appearance: none; appearance: none; height: 4px; background: #2a313b;
+input[type="range"] { -webkit-appearance: none; appearance: none; height: 4px; background: #d8cfbb;
   border-radius: 999px; outline: none; }
 input[type="range"]::-webkit-slider-thumb { -webkit-appearance: none; appearance: none;
   width: 14px; height: 14px; border-radius: 50%; background: var(--accent); cursor: pointer;
-  border: 2px solid #0b0d10; }
+  border: 2px solid #fffdf7; }

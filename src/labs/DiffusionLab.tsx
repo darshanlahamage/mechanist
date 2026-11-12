@@ -99,8 +99,8 @@ export default function DiffusionLab() {
       return p
     }
     return [
-      { name: 'cosine', color: '#5eead4', points: pts('cosine') },
-      { name: 'linear', color: '#a78bfa', points: pts('linear') },
+      { name: 'cosine', color: '#0b6f66', points: pts('cosine') },
+      { name: 'linear', color: '#6a46a3', points: pts('linear') },
     ]
   }, [])
 

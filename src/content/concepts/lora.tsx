@@ -136,7 +136,7 @@ model.print_trainable_parameters()   # trainable: 0.62% of total`}</Code>
               ['QLoRA result much worse than LoRA', 'Quantisation of the base is too aggressive, or a layer that should stay in higher precision got quantised.'],
               ['Stacking two adapters gives nonsense', 'They were each trained against the unmodified base. Their updates are not designed to compose.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}

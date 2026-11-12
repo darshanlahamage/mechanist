@@ -33,11 +33,11 @@ export default function TrainMemoryLab() {
     const act = checkpoint ? actFull / Math.sqrt(m.nLayers) + batch * seqLen * m.dModel * 4 * BYTES[m.dtype] : actFull
 
     return [
-      { name: 'weights', bytes: shard(w, shardWeight), color: '#5eead4' },
-      { name: 'gradients', bytes: shard(g, shardGrad), color: '#a78bfa' },
-      { name: 'fp32 master copy', bytes: shard(master, shardOpt), color: '#60a5fa' },
-      { name: 'Adam states', bytes: shard(optim, shardOpt), color: '#fbbf24' },
-      { name: 'activations', bytes: act, color: '#f87171' },
+      { name: 'weights', bytes: shard(w, shardWeight), color: '#0b6f66' },
+      { name: 'gradients', bytes: shard(g, shardGrad), color: '#6a46a3' },
+      { name: 'fp32 master copy', bytes: shard(master, shardOpt), color: '#2563a8' },
+      { name: 'Adam states', bytes: shard(optim, shardOpt), color: '#9a5c05' },
+      { name: 'activations', bytes: act, color: '#b03a31' },
     ]
   }, [P, m, gpus, batch, seqLen, zero, checkpoint])
 
@@ -73,7 +73,7 @@ export default function TrainMemoryLab() {
           <Stat label="just for inference" value={fmtBytes(inference)}
                 sub={`training needs ${(total / inference).toFixed(1)}× more`} />
           {!fits && (
-            <div className="rounded-lg border-l-2 border-[var(--bad)] bg-[rgba(248,113,113,0.07)] px-3 py-2 text-[12px] leading-relaxed text-[#c7cdd8]">
+            <div className="rounded-lg border-l-2 border-[var(--bad)] bg-[rgba(176,58,49,0.07)] px-3 py-2 text-[12px] leading-relaxed text-[#3e392f]">
               Out of memory. Shrink the batch, turn on checkpointing, or shard further with ZeRO-3.
             </div>
           )}
@@ -85,7 +85,7 @@ export default function TrainMemoryLab() {
               {parts.map(p => (
                 <div key={p.name} className="group relative h-full transition-all"
                      style={{ width: `${(p.bytes / total) * 100}%`, background: p.color }}>
-                  <div className="pointer-events-none absolute bottom-full left-1/2 mb-1 hidden -translate-x-1/2 whitespace-nowrap rounded bg-[#0b0d10] px-1.5 py-0.5 font-mono text-[10px] text-white group-hover:block">
+                  <div className="pointer-events-none absolute bottom-full left-1/2 mb-1 hidden -translate-x-1/2 whitespace-nowrap rounded bg-[var(--text)] px-1.5 py-0.5 font-mono text-[10px] text-[#fffdf7] group-hover:block">
                     {p.name}: {fmtBytes(p.bytes)}
                   </div>
                 </div>
@@ -97,14 +97,14 @@ export default function TrainMemoryLab() {
                   <tr key={p.name} className="border-t border-[var(--line)]">
                     <td className="py-1.5">
                       <span className="mr-2 inline-block h-2 w-2 rounded-sm align-middle" style={{ background: p.color }} />
-                      <span className="text-[#c7cdd8]">{p.name}</span>
+                      <span className="text-[#3e392f]">{p.name}</span>
                     </td>
                     <td className="py-1.5 text-right text-[var(--accent)]">{fmtBytes(p.bytes)}</td>
                     <td className="py-1.5 text-right text-[var(--dim)]">{((p.bytes / total) * 100).toFixed(0)}%</td>
                   </tr>
                 ))}
                 <tr className="border-t border-[var(--line)]">
-                  <td className="py-1.5 font-semibold text-white">total</td>
+                  <td className="py-1.5 font-semibold text-[var(--text)]">total</td>
                   <td className={`py-1.5 text-right font-semibold ${fits ? 'text-[var(--accent)]' : 'text-[var(--bad)]'}`}>{fmtBytes(total)}</td>
                   <td />
                 </tr>
@@ -119,7 +119,7 @@ export default function TrainMemoryLab() {
               gradients = P × {BYTES[m.dtype]} bytes<br />
               fp32 master copy = P × 4 bytes<br />
               Adam momentum + variance = P × 8 bytes<br />
-              <span className="text-[#c7cdd8]">→ {(2 + 2 + 4 + 8)} bytes per parameter before a single activation</span>
+              <span className="text-[#3e392f]">→ {(2 + 2 + 4 + 8)} bytes per parameter before a single activation</span>
             </div>
           </Panel>
         </div>

@@ -133,7 +133,7 @@ print((time.perf_counter() - t0) / 50 * 1000, "ms/token")`}</Code>
               ['Speculative decoding', 'Verify several draft tokens in one pass, using idle math units.', 'Only helps when the draft is accepted often.'],
               ['KV cache quantisation', 'int8 cache halves the per-sequence cost at long context.', 'Accuracy drop grows with context length.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-3 font-medium text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-3 font-medium text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 pr-3 text-[var(--dim)]">{r[1]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[2]}</td>
               </tr>
@@ -168,7 +168,7 @@ print((time.perf_counter() - t0) / 50 * 1000, "ms/token")`}</Code>
               ['int8 weights gave no speedup', 'Dequantisation running as a separate kernel, so you read more bytes, not fewer.'],
               ['Speculative decoding made it slower', 'Acceptance rate too low. Every rejection wastes the draft work.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}

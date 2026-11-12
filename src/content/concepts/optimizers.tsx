@@ -79,7 +79,7 @@ export const optimizers: Concept = {
               ['8-bit Adam', '2 bytes', 'quantised states']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)]">
                 <td className="py-1.5 text-[var(--accent)]">{r[0]}</td>
-                <td className="py-1.5 text-[#c7cdd8]">{r[1]}</td>
+                <td className="py-1.5 text-[#3e392f]">{r[1]}</td>
                 <td className="py-1.5 text-right text-[var(--dim)]">{r[2]}</td>
               </tr>
             ))}
@@ -147,7 +147,7 @@ opt = torch.optim.AdamW(
               ['Switching optimizer made everything worse', 'The learning rate does not transfer. SGD and Adam need learning rates orders of magnitude apart.'],
               ['Model trains but will not generalise', 'Decay applied to biases and norm parameters. Exclude anything with fewer than 2 dimensions.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}

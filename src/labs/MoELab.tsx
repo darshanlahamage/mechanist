@@ -91,8 +91,8 @@ export default function MoELab() {
                   <div className="absolute bottom-0 w-full rounded-t-sm transition-all"
                        style={{ height: `${(v / Math.max(maxLoad, 1)) * 100}%`,
                                 background: v > idealLoad * 1.5 ? 'var(--bad)'
-                                          : v < idealLoad * 0.5 ? '#39414e' : 'var(--accent)' }} />
-                  <div className="pointer-events-none absolute bottom-full left-1/2 mb-1 hidden -translate-x-1/2 whitespace-nowrap rounded bg-[#0b0d10] px-1.5 py-0.5 font-mono text-[10px] text-[var(--accent)] group-hover:block">
+                                          : v < idealLoad * 0.5 ? '#cec4ae' : 'var(--accent)' }} />
+                  <div className="pointer-events-none absolute bottom-full left-1/2 mb-1 hidden -translate-x-1/2 whitespace-nowrap rounded bg-[var(--text)] px-1.5 py-0.5 font-mono text-[10px] text-[#fffdf7] group-hover:block">
                     {v} tokens
                   </div>
                 </div>
@@ -106,7 +106,7 @@ export default function MoELab() {
           </Panel>
 
           <Panel title="Routing entropy over training">
-            <Line series={[{ name: 'entropy', color: auxLoss ? '#5eead4' : '#f87171', points: history }]}
+            <Line series={[{ name: 'entropy', color: auxLoss ? '#0b6f66' : '#b03a31', points: history }]}
                   xLabel="step" yLabel="bits" height={150} />
             <div className="mt-2 text-[12.5px] leading-relaxed text-[var(--dim)]">
               Entropy is how evenly tokens are spread. Flat near the top means every expert is used.

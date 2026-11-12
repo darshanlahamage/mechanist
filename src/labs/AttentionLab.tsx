@@ -52,7 +52,7 @@ export default function AttentionLab() {
                   tone={h < maxH * 0.35 ? 'bad' : 'normal'} />
           </div>
           {!scaled && dHead >= 32 && (
-            <div className="rounded-lg border-l-2 border-[var(--bad)] bg-[rgba(248,113,113,0.07)] px-3 py-2 text-[12px] text-[#c7cdd8]">
+            <div className="rounded-lg border-l-2 border-[var(--bad)] bg-[rgba(176,58,49,0.07)] px-3 py-2 text-[12px] text-[#3e392f]">
               Scores now have standard deviation ≈ {Math.sqrt(dHead).toFixed(1)}. Softmax turned into
               a hard pick. In training, gradients through this are near zero.
             </div>

@@ -7,7 +7,7 @@ function Tok({ t }: { t: string }) {
   const text = end ? t.slice(0, -4) : t
   return (
     <span className={`mr-[3px] inline-block rounded px-1.5 py-0.5 font-mono text-[11.5px] ${
-      end ? 'bg-[var(--accent)]/15 text-[var(--accent)]' : 'bg-[#2a313b] text-[#c7cdd8]'}`}>
+      end ? 'bg-[var(--accent)]/15 text-[var(--accent)]' : 'bg-[#e3dbc9] text-[#3e392f]'}`}>
       {text}{end && <span className="opacity-40">_</span>}
     </span>
   )
@@ -73,8 +73,8 @@ export default function TokenizerLab() {
                 <tbody>
                   {merges.slice().reverse().slice(0, 40).map(m => (
                     <tr key={m.rank} className="border-t border-[var(--line)]">
-                      <td className="py-1 text-[#5b6472]">{m.rank}</td>
-                      <td className="py-1 text-[#c7cdd8]">
+                      <td className="py-1 text-[#8f8775]">{m.rank}</td>
+                      <td className="py-1 text-[#3e392f]">
                         {m.a.replace('</w>', '_')} + {m.b.replace('</w>', '_')}
                       </td>
                       <td className="py-1 text-[var(--accent)]">{(m.a + m.b).replace('</w>', '_')}</td>

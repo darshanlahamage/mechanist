@@ -60,7 +60,7 @@ function Canvas({ data, size = 150, label, dim }:
   }, [data])
   return (
     <div className="text-center" style={{ opacity: dim ? 0.35 : 1 }}>
-      <canvas ref={ref} className="rounded-md border border-[#2b3340]"
+      <canvas ref={ref} className="rounded-md border border-[#dcd3c0]"
         style={{ width: size, height: size, imageRendering: 'pixelated' }} />
       {label && <div className="mt-1.5 font-mono text-[10.5px] text-[var(--dim)]">{label}</div>}
     </div>
@@ -162,12 +162,12 @@ function Stage({ step, t }: Frame) {
       <div className="w-full max-w-[560px]">
         <div className="relative h-[42px]">
           <svg viewBox="0 0 560 42" className="w-full">
-            <polyline fill="none" stroke="#2b3340" strokeWidth="1.5"
+            <polyline fill="none" stroke="#dcd3c0" strokeWidth="1.5"
               points={Array.from({ length: 56 }, (_, i) => {
                 const s = (i / 55) * T
                 return `${(i / 55) * 560},${38 - alphaBar(s) * 32}`
               }).join(' ')} />
-            <circle cx={(tt / T) * 560} cy={38 - ab * 32} r="4" fill="#5eead4" />
+            <circle cx={(tt / T) * 560} cy={38 - ab * 32} r="4" fill="#0b6f66" />
           </svg>
         </div>
         <div className="flex justify-between font-mono text-[10px] text-[var(--dim)]">

@@ -73,7 +73,7 @@ export const roofline: Concept = {
               <tr key={r[0]} className="border-t border-[var(--line)]">
                 <td className="py-1.5 text-[var(--accent)]">{r[0]}</td>
                 <td className="py-1.5 text-[var(--dim)]">{r[1]}</td>
-                <td className="py-1.5 text-right text-[#c7cdd8]">{r[2]} FLOPs/byte</td>
+                <td className="py-1.5 text-right text-[#3e392f]">{r[2]} FLOPs/byte</td>
               </tr>
             ))}
           </tbody>
@@ -121,7 +121,7 @@ print(measured_bandwidth())   # usually 80-90% of the spec sheet number`}</Code>
               ['Compute bound', 'Use tensor cores. Pick shapes that match the hardware MMA sizes. Lower precision. Check you are not losing time to poor occupancy or divergence.'],
               ['Neither — far below the roof', 'Something else is wrong: launch overhead, synchronisation, bad access patterns, or the GPU is idle waiting on the CPU.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 font-medium text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 font-medium text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}
@@ -149,7 +149,7 @@ print(measured_bandwidth())   # usually 80-90% of the spec sheet number`}</Code>
               ['Fusing two kernels gave a large speedup', 'Correct and expected — you removed a round trip to memory without changing the arithmetic.'],
               ['Half precision gave no speedup on a compute-bound kernel', 'Tensor cores not being used. Check the shapes and alignment the hardware requires.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}

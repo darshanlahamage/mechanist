@@ -145,7 +145,7 @@ for text in ["hello world", "नमस्ते दुनिया", "こんに�
               ['Strange outputs from rare strings', 'Glitch tokens — symbols that exist in the vocabulary but almost never appeared in training, so their embeddings are untrained.'],
               ['Prompt works, same prompt with trailing space fails', 'A trailing space changes the tokenisation of the next word entirely.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}

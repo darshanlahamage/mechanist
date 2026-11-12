@@ -117,7 +117,7 @@ export default function QuantizationLab() {
                   <div className="absolute bottom-0 w-full rounded-t-[2px]"
                        style={{ height: `${(e / Math.max(...errPerRow)) * 100}%`,
                                 background: i === worstRow ? 'var(--bad)' : e > meanErr * 2 ? 'var(--warn)' : 'var(--accent)' }} />
-                  <div className="pointer-events-none absolute bottom-full left-1/2 mb-1 hidden -translate-x-1/2 whitespace-nowrap rounded bg-[#0b0d10] px-1.5 py-0.5 font-mono text-[10px] text-[var(--accent)] group-hover:block">
+                  <div className="pointer-events-none absolute bottom-full left-1/2 mb-1 hidden -translate-x-1/2 whitespace-nowrap rounded bg-[var(--text)] px-1.5 py-0.5 font-mono text-[10px] text-[#fffdf7] group-hover:block">
                     ch {i}: {e.toExponential(1)}
                   </div>
                 </div>
@@ -153,7 +153,7 @@ export default function QuantizationLab() {
               <table className="font-mono text-[11px]">
                 <tbody>
                   <tr><td className="pr-3 text-[var(--dim)]">original</td>
-                    {w[worstRow].slice(0, 14).map((v, i) => <td key={i} className="px-1.5 py-1 text-[#c7cdd8]">{v.toFixed(3)}</td>)}</tr>
+                    {w[worstRow].slice(0, 14).map((v, i) => <td key={i} className="px-1.5 py-1 text-[#3e392f]">{v.toFixed(3)}</td>)}</tr>
                   <tr><td className="pr-3 text-[var(--dim)]">quantised</td>
                     {q[worstRow].slice(0, 14).map((v, i) => (
                       <td key={i} className={`px-1.5 py-1 ${Math.abs(v - w[worstRow][i]) > meanErr * 3 ? 'text-[var(--bad)]' : 'text-[var(--accent)]'}`}>

@@ -127,7 +127,7 @@ def block_post(x, attn, ffn, n1, n2):
               ['Replacing LayerNorm with RMSNorm hurt quality', 'Usually the epsilon or the fp32 cast, not the method. Check both before blaming RMSNorm.'],
               ['Weight decay has no visible effect on some layers', 'Expected. Normalised layers are scale-invariant, so shrinking those weights does almost nothing.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}

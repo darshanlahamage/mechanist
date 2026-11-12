@@ -84,12 +84,12 @@ export default function SamplingLab() {
               {CANDIDATES.map((c, i) => (
                 <div key={c} className="flex items-center gap-2">
                   <span className="w-[62px] shrink-0 text-right font-mono text-[11px] text-[var(--dim)]">{c}</span>
-                  <div className="h-[14px] flex-1 overflow-hidden rounded-sm bg-[#1a1f27]">
+                  <div className="h-[14px] flex-1 overflow-hidden rounded-sm bg-[var(--panel-2)]">
                     <div className="h-full rounded-sm transition-all"
                          style={{ width: `${probs[i] * 100}%`,
-                                  background: kept.has(i) ? 'var(--accent)' : '#39414e' }} />
+                                  background: kept.has(i) ? 'var(--accent)' : '#cec4ae' }} />
                   </div>
-                  <span className={`w-[52px] shrink-0 font-mono text-[11px] ${probs[i] > 0 ? 'text-[#c7cdd8]' : 'text-[#454d5a]'}`}>
+                  <span className={`w-[52px] shrink-0 font-mono text-[11px] ${probs[i] > 0 ? 'text-[#3e392f]' : 'text-[#a79e8c]'}`}>
                     {probs[i] > 0 ? (probs[i] * 100).toFixed(1) + '%' : 'cut'}
                   </span>
                 </div>
@@ -100,7 +100,7 @@ export default function SamplingLab() {
           <Panel title="24 samples drawn from that distribution">
             <div className="flex flex-wrap gap-1.5">
               {samples.map((s, i) => (
-                <span key={i} className="rounded bg-[#2a313b] px-2 py-0.5 font-mono text-[11.5px] text-[#c7cdd8]">{s}</span>
+                <span key={i} className="rounded bg-[#e3dbc9] px-2 py-0.5 font-mono text-[11.5px] text-[#3e392f]">{s}</span>
               ))}
             </div>
             <div className="mt-2.5 text-[12px] text-[var(--dim)]">

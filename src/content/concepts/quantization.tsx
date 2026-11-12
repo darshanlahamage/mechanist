@@ -122,7 +122,7 @@ print(err.mean(dim=1).topk(5))      # the channels that got hurt`}</Code>
               ['SmoothQuant', 'Weights and activations at int8. Needs the per-channel rescale folded in.'],
               ['FP8', 'Hardware-native on Hopper and later. Fast, and usable for training as well.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 font-medium text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 font-medium text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}
@@ -145,7 +145,7 @@ print(err.mean(dim=1).topk(5))      # the channels that got hurt`}</Code>
               ['Works on short prompts, degrades on long ones', 'KV cache quantisation. Error accumulates with sequence length.'],
               ['One layer ruins everything', 'Usually the first or last. Many recipes deliberately keep those at higher precision.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}

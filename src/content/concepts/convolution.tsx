@@ -133,7 +133,7 @@ def conv2d(x, w, stride=1, pad=0):
               ['Works on 224px, fails on other sizes', 'A fixed-size flatten before the classifier. Use global pooling instead.'],
               ['First layer dominates the profile', 'Three input channels gives terrible arithmetic intensity. Expected, and usually not worth fixing.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}

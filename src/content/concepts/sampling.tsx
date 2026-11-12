@@ -130,7 +130,7 @@ def sample(logits, temperature=1.0, top_k=0, top_p=1.0, min_p=0.0):
               ['top_p=0.9 behaves differently across libraries', 'Off-by-one in whether the token that crosses p is kept. Both exist in the wild.'],
               ['Tuned settings stopped working after a model update', 'Logit scale changed. Temperature is not comparable across models.']].map(r => (
               <tr key={r[0]} className="border-t border-[var(--line)] align-top">
-                <td className="py-2 pr-4 text-[#c7cdd8]">{r[0]}</td>
+                <td className="py-2 pr-4 text-[#3e392f]">{r[0]}</td>
                 <td className="py-2 text-[var(--dim)]">{r[1]}</td>
               </tr>
             ))}
